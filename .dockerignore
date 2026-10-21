@@ -1,9 +1,33 @@
-.venv
-.git
-__pycache__/
-*.pyc
-.env
-.pytest_cache
-.ruff_cache
+# Keep the build context small and secrets out of the image.
+# Note: README.md must NOT be ignored — pyproject.toml needs it to build.
+
+# Python / tooling
+**/.venv
+**/__pycache__
+**/*.pyc
+**/.pytest_cache
+**/.ruff_cache
+**/.mypy_cache
+
+# Secrets
+**/.env
+**/secrets*
+
+# Git, editors, OS junk
+**/.git
+**/.gitignore
+**/.vscode
+**/.idea
+**/.DS_Store
+
+# Docker files themselves
+**/.dockerignore
+**/Dockerfile*
+**/compose.y*ml
+**/docker-compose*
+
+# Not needed at runtime
 tests/
 loadtests/
+plan.md
+README.Docker.md

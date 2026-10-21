@@ -17,7 +17,9 @@ COPY src ./src
 RUN --mount=type=cache,target=/root/.cache/uv \
     uv sync --locked --no-dev
 
-RUN useradd --create-home appuser
+# Non-root user with a fixed UID and no login shell
+ARG UID=10001
+RUN useradd --uid "${UID}" --no-create-home --shell /usr/sbin/nologin appuser
 USER appuser
 
 EXPOSE 8000

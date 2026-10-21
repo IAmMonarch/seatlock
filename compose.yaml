@@ -1,0 +1,35 @@
+# Local development stack: SeatLock API + Postgres.
+# Start:  docker compose up --build
+# Values come from .env if present, otherwise the dev defaults below.
+
+services:
+  api:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      # Inside Compose the database host is the service name "db", not localhost.
+      DATABASE_URL: postgresql+asyncpg://${POSTGRES_USER:-seatlock}:${POSTGRES_PASSWORD:-seatlock}@db:5432/${POSTGRES_DB:-seatlock}
+    depends_on:
+      db:
+        condition: service_healthy
+
+  db:
+    image: postgres:17
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-seatlock}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-seatlock}
+      POSTGRES_DB: ${POSTGRES_DB:-seatlock}
+    ports:
+      - "${POSTGRES_PORT:-5433}:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U $${POSTGRES_USER} -d $${POSTGRES_DB}"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  pgdata:
