@@ -28,8 +28,8 @@ A small Ticketmaster-style backend built with **Python, FastAPI, Postgres and a 
 - [x] Load config from environment variables (`pydantic-settings`, `.env.example`)
 - [x] Configure Alembic and create the first empty migration
 - [x] Add a `GET /health` endpoint
-- [ ] Add linting and formatting with Ruff, and type checking with mypy
-- [ ] Add pre-commit hooks
+- [x] Add linting and formatting with Ruff, and type checking with mypy
+- [x] Add pre-commit hooks
 
 ## Phase 1 — Core API (~1–2 weeks)
 
