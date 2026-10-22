@@ -21,15 +21,15 @@ A small Ticketmaster-style backend built with **Python, FastAPI, Postgres and a 
 ## Phase 0 — Project setup
 
 - [x] Initialise the git repo and a `.gitignore`
-- [ ] Set up the project layout (`app/`, `tests/`, `alembic/`)
+- [x] Set up the project layout (`app/`, `tests/`, `alembic/`)
 - [x] Manage dependencies with `uv` or Poetry
 - [x] Write a `Dockerfile` for the API
 - [x] Write a `docker-compose.yml` for the API and Postgres (Redis comes later)
 - [x] Load config from environment variables (`pydantic-settings`, `.env.example`)
 - [x] Configure Alembic and create the first empty migration
 - [x] Add a `GET /health` endpoint
-- [ ] Add linting and formatting with Ruff, and type checking with mypy
-- [ ] Add pre-commit hooks
+- [x] Add linting and formatting with Ruff, and type checking with mypy
+- [x] Add pre-commit hooks
 
 ## Phase 1 — Core API (~1–2 weeks)
 

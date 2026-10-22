@@ -25,5 +25,28 @@ build-backend = "uv_build"
 
 [dependency-groups]
 dev = [
+    "mypy>=2.4.0",
+    "pre-commit>=4.7.0",
     "pytest>=9.1.1",
+    "ruff>=0.17.1",
 ]
+
+[tool.ruff]
+line-length = 88
+target-version = "py312"
+
+[tool.ruff.lint]
+select = [
+    "E",    # pycodestyle errors
+    "F",    # pyflakes: unused imports, undefined names
+    "I",    # import sorting
+    "UP",   # modern Python syntax
+    "B",    # bugbear: common bugs
+    "SIM",  # simplifications
+]
+
+[tool.mypy]
+python_version = "3.12"
+strict = true
+plugins = ["pydantic.mypy"]
+files = ["src"]
