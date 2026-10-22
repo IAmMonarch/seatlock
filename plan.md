@@ -21,7 +21,7 @@ A small Ticketmaster-style backend built with **Python, FastAPI, Postgres and a 
 ## Phase 0 — Project setup
 
 - [x] Initialise the git repo and a `.gitignore`
-- [ ] Set up the project layout (`app/`, `tests/`, `alembic/`)
+- [x] Set up the project layout (`app/`, `tests/`, `alembic/`)
 - [x] Manage dependencies with `uv` or Poetry
 - [x] Write a `Dockerfile` for the API
 - [x] Write a `docker-compose.yml` for the API and Postgres (Redis comes later)
