@@ -34,7 +34,7 @@ A small Ticketmaster-style backend built with **Python, FastAPI, Postgres and a 
 ## Phase 1 — Core API (~1–2 weeks)
 
 ### Users & auth
-- [ ] Create the `users` table with roles: `buyer`, `organizer`, `admin`
+- [x] Create the `users` table with roles: `buyer`, `organizer`, `admin`
 - [ ] Add a register endpoint with hashed passwords (argon2 or bcrypt)
 - [ ] Add login that returns a JWT access token, plus a refresh token
 - [ ] Add a `get_current_user` dependency and role-based permission checks
