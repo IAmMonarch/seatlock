@@ -10,6 +10,7 @@ services:
     environment:
       # Inside Compose the database host is the service name "db", not localhost.
       DATABASE_URL: postgresql+asyncpg://${POSTGRES_USER:-seatlock}:${POSTGRES_PASSWORD:-seatlock}@db:5432/${POSTGRES_DB:-seatlock}
+      JWT_SECRET_KEY: ${JWT_SECRET_KEY}
     depends_on:
       db:
         condition: service_healthy
