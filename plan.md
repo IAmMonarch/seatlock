@@ -40,7 +40,7 @@ A small Ticketmaster-style backend built with **Python, FastAPI, Postgres and a 
 - [x] Add a `get_current_user` dependency and role-based permission checks
 
 ### Venues, events, seats
-- [ ] Model the data: `venues`, `sections`, `seats`, `events`, `event_seats`
+- [x] Model the data: `venues`, `sections`, `seats`, `events`, `event_seats`
 - [ ] Let organizers create, update and delete venues and seat layouts
 - [ ] Let organizers create, publish and cancel events
 - [ ] Let buyers list events with pagination, filters (date, city) and search
