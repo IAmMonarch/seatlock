@@ -6,6 +6,8 @@ from sqlalchemy.engine import Connection
 from sqlalchemy.ext.asyncio import async_engine_from_config
 
 import seatlock.auth.models  # noqa: F401
+import seatlock.events.models  # noqa: F401
+import seatlock.venues.models  # noqa: F401
 from alembic import context
 from seatlock.config import settings
 from seatlock.database import Base
